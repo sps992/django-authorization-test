@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
-
 def index(request):
     """Return the index.html file"""
     return render(request, 'index.html')
@@ -62,6 +61,7 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {
         "registration_form": registration_form})
+
 
 def user_profile(request):
     """The user's profile page"""
