@@ -56,8 +56,9 @@ def registration(request):
                 auth.login(user=user, request=request)
                 messages.success(request, "Welcome to the clan, you are successfully registered!")
                 return redirect(reverse('index'))
+            else:
+                messages.error(request, "Sucks to be you...we are unable to register your account at this time")
     else:
-        messages.error(request, "Sucks to be you...we are unable to register your account at this time")
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {
         "registration_form": registration_form})
